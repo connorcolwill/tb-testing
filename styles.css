@@ -110,12 +110,12 @@ li {
     min-height: 100vh;
     display: flex;
     align-items: center;
-    justify-content: center;
-    text-align: center;
+    justify-content: space-between;
     background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-teal) 100%);
     color: var(--white);
     overflow: hidden;
-    padding: var(--spacing-lg) 0;
+    padding: var(--spacing-lg);
+    gap: var(--spacing-xl);
 }
 
 .hero-section::before {
@@ -139,44 +139,36 @@ li {
     background: rgba(27, 75, 127, 0.2);
 }
 
-.hero-content {
+.hero-text-content {
     position: relative;
     z-index: 1;
-    max-width: 1000px;
+    flex: 2;
+    max-width: 66%;
     padding: var(--spacing-md);
+    text-align: center;
 }
 
-/* Hero Logos - Integrated into background */
-.hero-logos {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+.hero-images {
+    position: relative;
+    z-index: 1;
+    flex: 1;
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding: var(--spacing-lg);
-    pointer-events: none;
-    z-index: 0;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    align-items: center;
+    justify-content: center;
+    max-width: 33%;
 }
 
-.hero-logo {
-    max-width: 200px;
-    max-height: 200px;
-    width: auto;
+.hero-image {
+    max-width: 100%;
+    width: 100%;
     height: auto;
     object-fit: contain;
-    opacity: 0.15;
-    transition: opacity 0.3s ease;
-}
-
-.hero-logo:first-child {
-    align-self: flex-start;
-}
-
-.hero-logo:last-child {
-    align-self: flex-end;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    background: rgba(255, 255, 255, 0.1);
+    padding: var(--spacing-sm);
 }
 
 .hero-title {
@@ -315,6 +307,7 @@ li {
 .challenge-intro h3 {
     color: var(--secondary-teal);
     margin-bottom: var(--spacing-md);
+    text-align: center;
 }
 
 .impact-grid {
@@ -326,7 +319,7 @@ li {
 
 .impact-card {
     background: var(--white);
-    padding: var(--spacing-lg);
+    padding: var(--spacing-md);
     border-radius: 12px;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
     text-align: center;
@@ -363,10 +356,13 @@ li {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.timeline-visual h4 {
-    text-align: center;
-    margin-bottom: var(--spacing-md);
+/* Pathway titles - outside timeline visual boxes */
+.pathway-title {
+    text-align: left;
+    margin-bottom: var(--spacing-sm);
+    margin-top: var(--spacing-lg);
     color: var(--primary-blue);
+    font-size: 1.2rem;
 }
 
 .timeline-bar {
@@ -416,6 +412,7 @@ li {
 
 .solution-intro h3 {
     color: var(--secondary-teal);
+    text-align: center;
 }
 
 .process-flow {
@@ -486,7 +483,7 @@ li {
 }
 
 .innovation-card {
-    padding: var(--spacing-lg);
+    padding: var(--spacing-md);
     background: var(--white);
     border-radius: 12px;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
@@ -517,20 +514,21 @@ li {
     line-height: 1.5;
 }
 
+.approach-title {
+    color: var(--secondary-teal);
+    text-align: center;
+    margin-top: var(--spacing-lg);
+}
+
+.approach-intro {
+    text-align: center;
+    margin-bottom: var(--spacing-sm);
+}
+
 .approach-list {
     max-width: 800px;
     margin: var(--spacing-md) auto;
     list-style-position: inside;
-}
-
-/* Timeline visual styling */
-.timeline-visual h4 {
-    padding: var(--spacing-sm) var(--spacing-md);
-    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-    border-radius: 8px;
-    border-left: 4px solid var(--primary-blue);
-    display: inline-block;
-    margin: 0 auto var(--spacing-md);
 }
 
 /* ===================================
@@ -549,11 +547,14 @@ li {
 }
 
 .guidelines-intro {
-    text-align: center;
     margin-bottom: var(--spacing-lg);
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
+}
+
+.guidelines-intro p {
+    text-align: left;
 }
 
 .guideline-recommendation {
@@ -565,10 +566,11 @@ li {
     margin-top: var(--spacing-md);
 }
 
-.guidelines-visuals {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--spacing-xl);
+/* Stack guidelines visuals vertically */
+.guidelines-visuals-stacked {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
     margin: var(--spacing-xl) 0;
     max-width: 100%;
 }
@@ -603,7 +605,6 @@ li {
 .impact-intro {
     max-width: 800px;
     margin: 0 auto var(--spacing-lg);
-    text-align: center;
 }
 
 .impact-section-title {
@@ -782,7 +783,7 @@ li {
 }
 
 .phase {
-    padding: var(--spacing-lg);
+    padding: var(--spacing-md);
     background: var(--white);
     border-radius: 12px;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
@@ -863,6 +864,7 @@ li {
 
 .scalability h3 {
     color: var(--secondary-teal);
+    text-align: center;
 }
 
 .future-directions {
@@ -872,6 +874,18 @@ li {
 
 .future-directions h3 {
     color: var(--secondary-teal);
+    text-align: center;
+}
+
+.why-matters-section {
+    max-width: 800px;
+    margin: var(--spacing-xl) auto;
+}
+
+.why-matters-section h3 {
+    color: var(--secondary-teal);
+    text-align: center;
+    margin-bottom: var(--spacing-md);
 }
 
 
@@ -955,8 +969,8 @@ li {
 
 /* Make university logo (fig9) larger than hospital logo */
 .footer-logo:first-child {
-    max-width: 220px;
-    max-height: 220px;
+    max-width: 250px;
+    max-height: 250px;
 }
 
 .footer-logo:hover {
@@ -1012,13 +1026,21 @@ li {
         font-size: 1.1rem;
     }
     
-    .hero-logos {
-        gap: var(--spacing-sm);
+    .hero-section {
+        flex-direction: column;
     }
-    
-    .hero-logo {
-        max-width: 80px;
-        max-height: 80px;
+
+    .hero-text-content {
+        max-width: 100%;
+    }
+
+    .hero-images {
+        max-width: 100%;
+        flex-direction: row;
+    }
+
+    .hero-image {
+        max-width: 45%;
     }
     
     .visual-container {
@@ -1029,8 +1051,8 @@ li {
         max-width: 100%;
     }
     
-    .guidelines-visuals {
-        grid-template-columns: 1fr;
+    .guidelines-visuals-stacked {
+        gap: var(--spacing-md);
     }
     
     .section-title {
@@ -1065,9 +1087,6 @@ li {
         grid-template-columns: 1fr;
     }
     
-    .guidelines-visuals {
-        grid-template-columns: 1fr;
-    }
     
     .footer-logos {
         gap: var(--spacing-md);
@@ -1091,9 +1110,12 @@ li {
         font-size: 0.9rem;
     }
     
-    .hero-logo {
-        max-width: 60px;
-        max-height: 60px;
+    .hero-image {
+        max-width: 100%;
+    }
+
+    .hero-images {
+        flex-direction: column;
     }
     
     .container {
