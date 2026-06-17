@@ -110,12 +110,12 @@ li {
     min-height: 100vh;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    text-align: center;
     background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-teal) 100%);
     color: var(--white);
     overflow: hidden;
-    padding: var(--spacing-lg);
-    gap: var(--spacing-xl);
+    padding: var(--spacing-lg) 0;
 }
 
 .hero-section::before {
@@ -139,36 +139,27 @@ li {
     background: rgba(27, 75, 127, 0.2);
 }
 
-.hero-text-content {
+.hero-content {
     position: relative;
     z-index: 1;
-    flex: 2;
-    max-width: 66%;
+    max-width: 1000px;
     padding: var(--spacing-md);
-    text-align: center;
 }
 
-.hero-images {
-    position: relative;
-    z-index: 1;
-    flex: 1;
+/* Hero images above text - simple and small */
+.hero-images-top {
     display: flex;
-    flex-direction: column;
-    gap: var(--spacing-md);
-    align-items: center;
     justify-content: center;
-    max-width: 33%;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
 }
 
-.hero-image {
-    max-width: 100%;
-    width: 100%;
+.hero-image-small {
+    max-width: 150px;
+    max-height: 150px;
+    width: auto;
     height: auto;
     object-fit: contain;
-    border-radius: 12px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-    background: rgba(255, 255, 255, 0.1);
-    padding: var(--spacing-sm);
 }
 
 .hero-title {
@@ -310,6 +301,15 @@ li {
     text-align: center;
 }
 
+.challenge-intro p {
+    margin-bottom: var(--spacing-sm);
+}
+
+.challenge-intro .challenge-list {
+    margin-top: var(--spacing-sm);
+    padding-left: var(--spacing-lg);
+}
+
 .impact-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -344,7 +344,8 @@ li {
 
 .challenge-list {
     max-width: 800px;
-    margin: var(--spacing-md) auto;
+    margin: var(--spacing-sm) auto;
+    padding-left: var(--spacing-lg);
 }
 
 .timeline-visual {
@@ -356,13 +357,10 @@ li {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Pathway titles - outside timeline visual boxes */
-.pathway-title {
-    text-align: left;
-    margin-bottom: var(--spacing-sm);
-    margin-top: var(--spacing-lg);
+.timeline-visual h4 {
+    text-align: center;
+    margin-bottom: var(--spacing-md);
     color: var(--primary-blue);
-    font-size: 1.2rem;
 }
 
 .timeline-bar {
@@ -514,21 +512,24 @@ li {
     line-height: 1.5;
 }
 
+.approach-section {
+    max-width: 800px;
+    margin: var(--spacing-lg) auto;
+}
+
 .approach-title {
     color: var(--secondary-teal);
     text-align: center;
-    margin-top: var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
 }
 
-.approach-intro {
-    text-align: center;
+.approach-section p {
     margin-bottom: var(--spacing-sm);
 }
 
 .approach-list {
-    max-width: 800px;
-    margin: var(--spacing-md) auto;
-    list-style-position: inside;
+    margin-top: var(--spacing-sm);
+    padding-left: var(--spacing-lg);
 }
 
 /* ===================================
@@ -570,9 +571,15 @@ li {
 .guidelines-visuals-stacked {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: var(--spacing-lg);
     margin: var(--spacing-xl) 0;
     max-width: 100%;
+}
+
+.guidelines-fig-small {
+    max-width: 500px;
+    margin: 0 auto;
 }
 
 .guideline-visual {
@@ -931,6 +938,12 @@ li {
     background: var(--white);
     border-radius: 4px;
     border-left: 3px solid var(--primary-blue);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.reference a {
+    word-break: break-all;
 }
 
 .reference:last-child {
@@ -969,8 +982,8 @@ li {
 
 /* Make university logo (fig9) larger than hospital logo */
 .footer-logo:first-child {
-    max-width: 250px;
-    max-height: 250px;
+    max-width: 280px;
+    max-height: 280px;
 }
 
 .footer-logo:hover {
@@ -1026,21 +1039,18 @@ li {
         font-size: 1.1rem;
     }
     
-    .hero-section {
-        flex-direction: column;
+    .hero-image-small {
+        max-width: 120px;
+        max-height: 120px;
     }
 
-    .hero-text-content {
-        max-width: 100%;
+    .challenge-list {
+        padding-left: var(--spacing-md);
     }
 
-    .hero-images {
-        max-width: 100%;
-        flex-direction: row;
-    }
-
-    .hero-image {
-        max-width: 45%;
+    .footer-logo:first-child {
+        max-width: 180px;
+        max-height: 180px;
     }
     
     .visual-container {
@@ -1095,6 +1105,11 @@ li {
     .footer-logo {
         max-width: 80px;
     }
+
+    .footer-logo:first-child {
+        max-width: 80px;
+        max-height: 80px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -1110,12 +1125,13 @@ li {
         font-size: 0.9rem;
     }
     
-    .hero-image {
-        max-width: 100%;
+    .hero-image-small {
+        max-width: 100px;
+        max-height: 100px;
     }
 
-    .hero-images {
-        flex-direction: column;
+    .challenge-list {
+        padding-left: var(--spacing-sm);
     }
     
     .container {
