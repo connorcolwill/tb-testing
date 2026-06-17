@@ -572,14 +572,14 @@ li {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: var(--spacing-lg);
+    gap: 0;
     margin: var(--spacing-xl) 0;
     max-width: 100%;
 }
 
 .guidelines-fig-small {
-    max-width: 500px;
-    margin: 0 auto;
+    max-width: 350px;
+    margin: 0 auto var(--spacing-xs);
 }
 
 .guideline-visual {
