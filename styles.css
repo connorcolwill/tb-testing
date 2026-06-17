@@ -155,6 +155,9 @@ li {
     margin-bottom: var(--spacing-md);
     flex-wrap: wrap;
     max-width: 100%;
+    padding: var(--spacing-md);
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
 }
 
 .hero-logo {
@@ -163,8 +166,7 @@ li {
     width: auto;
     height: auto;
     object-fit: contain;
-    filter: brightness(0) invert(1);
-    opacity: 0.9;
+    /* Removed filter - displaying images as-is */
 }
 
 .hero-title {
@@ -910,8 +912,10 @@ li {
     width: auto;
     height: auto;
     object-fit: contain;
-    filter: brightness(0) invert(1);
     opacity: 0.9;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 8px;
+    border-radius: 4px;
 }
 
 .footer-content {
