@@ -9,10 +9,9 @@
 }
 
 :root {
-    /* Color Palette */
+    /* Color Palette - Updated per feedback (removed orange) */
     --primary-blue: #1B4B7F;
     --secondary-teal: #00A9A5;
-    --accent-orange: #F47C3C;
     --white: #FFFFFF;
     --light-gray: #F5F5F5;
     --dark-gray: #333333;
@@ -103,8 +102,7 @@ li {
 
 .hero-section {
     position: relative;
-    height: 100vh;
-    min-height: 600px;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -112,6 +110,7 @@ li {
     background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-teal) 100%);
     color: var(--white);
     overflow: hidden;
+    padding: var(--spacing-lg) 0;
 }
 
 .hero-section::before {
@@ -138,28 +137,61 @@ li {
 .hero-content {
     position: relative;
     z-index: 1;
-    max-width: 900px;
+    max-width: 1000px;
     padding: var(--spacing-md);
 }
 
+/* Hero Logos */
+.hero-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
+    flex-wrap: wrap;
+}
+
+.hero-logo {
+    max-width: 150px;
+    height: auto;
+    filter: brightness(0) invert(1);
+    opacity: 0.9;
+}
+
 .hero-title {
-    font-size: 3.5rem;
+    font-size: 2.8rem;
     font-weight: 700;
     margin-bottom: var(--spacing-md);
     color: var(--white);
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    line-height: 1.3;
 }
 
 .hero-subtitle {
     font-size: 1.5rem;
     font-weight: 600;
-    margin-bottom: var(--spacing-lg);
+    margin-bottom: var(--spacing-sm);
     color: var(--white);
+}
+
+.hero-subtitle-main {
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin-bottom: var(--spacing-lg);
+    color: rgba(255, 255, 255, 0.95);
+    line-height: 1.4;
 }
 
 .hero-author {
     font-size: 1.1rem;
     margin-bottom: var(--spacing-md);
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* White author name per feedback */
+.hero-author strong {
+    color: var(--white);
+    font-weight: 600;
 }
 
 .hero-institution {
@@ -200,11 +232,35 @@ li {
     background-color: var(--light-gray);
 }
 
+/* Centered section titles per feedback */
 .section-title {
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: var(--spacing-lg);
     color: var(--primary-blue);
+}
+
+/* Visual containers for figures */
+.visual-container {
+    max-width: 900px;
+    margin: var(--spacing-lg) auto;
+    text-align: center;
+}
+
+.section-visual {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: var(--spacing-sm);
+}
+
+.figure-caption {
+    font-size: 0.9rem;
+    color: var(--medium-gray);
+    font-style: italic;
+    margin-top: var(--spacing-xs);
 }
 
 /* ===================================
@@ -220,6 +276,7 @@ li {
 .challenge-intro h3 {
     color: var(--secondary-teal);
     margin-bottom: var(--spacing-md);
+    text-align: center;
 }
 
 .impact-grid {
@@ -263,6 +320,7 @@ li {
 
 .challenge-details h3 {
     color: var(--secondary-teal);
+    text-align: center;
 }
 
 .timeline-visual {
@@ -297,6 +355,7 @@ li {
     font-weight: 600;
 }
 
+/* Centered green new diagnostic pathway per feedback */
 .timeline-segment-new {
     padding: var(--spacing-sm);
     background: linear-gradient(135deg, #27ae60 0%, #229954 100%);
@@ -304,6 +363,8 @@ li {
     text-align: center;
     border-radius: 4px;
     font-weight: 600;
+    margin: 0 auto;
+    max-width: 300px;
 }
 
 .timeline-label {
@@ -325,6 +386,7 @@ li {
 
 .solution-intro h3 {
     color: var(--secondary-teal);
+    text-align: center;
 }
 
 .process-flow {
@@ -392,10 +454,11 @@ li {
     gap: var(--spacing-md);
 }
 
+/* Updated highlight items - removed orange, using black per feedback */
 .highlight-item {
     padding: var(--spacing-md);
     background: var(--white);
-    border-left: 4px solid var(--accent-orange);
+    border-left: 4px solid var(--dark-gray);
     border-radius: 4px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -403,7 +466,7 @@ li {
 .highlight-item strong {
     display: block;
     margin-bottom: var(--spacing-xs);
-    color: var(--accent-orange);
+    color: var(--dark-gray);
     font-size: 1.1rem;
 }
 
@@ -418,11 +481,65 @@ li {
 
 .approach-box h3 {
     color: var(--secondary-teal);
+    text-align: center;
+}
+
+/* ===================================
+   GUIDELINES SECTION
+   =================================== */
+
+.guidelines-section {
+    max-width: 900px;
+    margin: var(--spacing-lg) auto;
+}
+
+.guidelines-section h3 {
+    text-align: center;
+    color: var(--secondary-teal);
+    margin-bottom: var(--spacing-md);
+}
+
+.guidelines-intro {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.guidelines-visuals {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-md);
+    margin: var(--spacing-lg) 0;
+}
+
+.guideline-visual {
+    text-align: center;
+}
+
+.guideline-visual img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: var(--spacing-sm);
 }
 
 /* ===================================
    IMPACT SECTION
    =================================== */
+
+.impact-intro {
+    max-width: 800px;
+    margin: 0 auto var(--spacing-lg);
+    text-align: center;
+}
+
+.impact-section-title {
+    text-align: center;
+    font-size: 2rem;
+    color: var(--primary-blue);
+    margin: var(--spacing-lg) 0 var(--spacing-md);
+}
 
 .stats-grid {
     display: grid;
@@ -453,7 +570,7 @@ li {
 }
 
 .stat-card.tertiary {
-    border-top: 5px solid var(--accent-orange);
+    border-top: 5px solid var(--dark-gray);
 }
 
 .stat-number {
@@ -491,6 +608,7 @@ li {
 .impact-category h3 {
     color: var(--primary-blue);
     margin-bottom: var(--spacing-md);
+    text-align: center;
 }
 
 .comparison-visual {
@@ -566,11 +684,12 @@ li {
     color: var(--primary-blue);
 }
 
+/* Updated savings highlight - removed orange per feedback */
 .savings-highlight {
     text-align: center;
     font-size: 1.5rem;
     font-weight: 700;
-    color: var(--accent-orange);
+    color: var(--dark-gray);
     padding: var(--spacing-md);
     background: var(--light-gray);
     border-radius: 8px;
@@ -644,18 +763,19 @@ li {
     gap: var(--spacing-md);
 }
 
+/* Updated factor styling - removed orange per feedback */
 .factor {
     padding: var(--spacing-md);
     background: var(--white);
     border-radius: 8px;
-    border-left: 4px solid var(--accent-orange);
+    border-left: 4px solid var(--dark-gray);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .factor strong {
     display: block;
     margin-bottom: var(--spacing-xs);
-    color: var(--accent-orange);
+    color: var(--dark-gray);
     font-size: 1.1rem;
 }
 
@@ -671,49 +791,7 @@ li {
 
 .scalability h3 {
     color: var(--secondary-teal);
-}
-
-.global-context {
-    margin: var(--spacing-lg) 0;
-    padding: var(--spacing-md);
-    background: var(--light-gray);
-    border-radius: 8px;
-}
-
-.global-context h3 {
     text-align: center;
-    color: var(--secondary-teal);
-    margin-bottom: var(--spacing-md);
-}
-
-.context-stats {
-    display: flex;
-    justify-content: space-around;
-    gap: var(--spacing-md);
-    margin-bottom: var(--spacing-md);
-    flex-wrap: wrap;
-}
-
-.context-stat {
-    text-align: center;
-    padding: var(--spacing-md);
-    background: var(--white);
-    border-radius: 8px;
-    flex: 1;
-    min-width: 200px;
-}
-
-.context-stat strong {
-    display: block;
-    font-size: 2rem;
-    color: var(--primary-blue);
-    margin-bottom: var(--spacing-xs);
-}
-
-.context-note {
-    text-align: center;
-    font-style: italic;
-    color: var(--medium-gray);
 }
 
 .future-directions {
@@ -723,6 +801,7 @@ li {
 
 .future-directions h3 {
     color: var(--secondary-teal);
+    text-align: center;
 }
 
 .why-matters {
@@ -736,16 +815,53 @@ li {
 .why-matters h3 {
     color: var(--secondary-teal);
     margin-bottom: var(--spacing-md);
+    text-align: center;
 }
 
+/* Updated closing statement - removed orange per feedback */
 .closing-statement {
     font-size: 1.2rem;
     text-align: center;
     padding: var(--spacing-md);
     background: var(--white);
-    border-left: 4px solid var(--accent-orange);
+    border-left: 4px solid var(--dark-gray);
     border-radius: 4px;
     margin-top: var(--spacing-md);
+}
+
+/* ===================================
+   REFERENCES SECTION
+   =================================== */
+
+.references-section {
+    max-width: 900px;
+    margin: var(--spacing-lg) auto;
+    padding: var(--spacing-md);
+    background: var(--light-gray);
+    border-radius: 8px;
+}
+
+.references-section h3 {
+    text-align: center;
+    color: var(--secondary-teal);
+    margin-bottom: var(--spacing-md);
+}
+
+.references-list {
+    list-style: none;
+    margin-left: 0;
+}
+
+.reference {
+    padding: var(--spacing-sm);
+    margin-bottom: var(--spacing-sm);
+    background: var(--white);
+    border-radius: 4px;
+    border-left: 3px solid var(--primary-blue);
+}
+
+.reference:last-child {
+    margin-bottom: 0;
 }
 
 /* ===================================
@@ -756,6 +872,22 @@ li {
     background: var(--primary-blue);
     color: var(--white);
     padding: var(--spacing-lg) 0 var(--spacing-md);
+}
+
+.footer-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+    flex-wrap: wrap;
+}
+
+.footer-logo {
+    max-width: 120px;
+    height: auto;
+    filter: brightness(0) invert(1);
+    opacity: 0.9;
 }
 
 .footer-content {
@@ -795,11 +927,23 @@ li {
 
 @media (max-width: 768px) {
     .hero-title {
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
     
     .hero-subtitle {
         font-size: 1.2rem;
+    }
+    
+    .hero-subtitle-main {
+        font-size: 1.1rem;
+    }
+    
+    .hero-logos {
+        gap: var(--spacing-md);
+    }
+    
+    .hero-logo {
+        max-width: 100px;
     }
     
     .section-title {
@@ -833,15 +977,35 @@ li {
     .phase-timeline {
         grid-template-columns: 1fr;
     }
+    
+    .guidelines-visuals {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-logos {
+        gap: var(--spacing-md);
+    }
+    
+    .footer-logo {
+        max-width: 80px;
+    }
 }
 
 @media (max-width: 480px) {
     .hero-title {
-        font-size: 2rem;
+        font-size: 1.6rem;
     }
     
     .hero-subtitle {
         font-size: 1rem;
+    }
+    
+    .hero-subtitle-main {
+        font-size: 0.95rem;
+    }
+    
+    .hero-logo {
+        max-width: 80px;
     }
     
     .container {
@@ -850,6 +1014,10 @@ li {
     
     .content-section {
         padding: var(--spacing-lg) 0;
+    }
+    
+    .footer-logo {
+        max-width: 60px;
     }
 }
 

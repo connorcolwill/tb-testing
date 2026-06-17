@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Rapid TB Testing Implementation at SickKids - Reducing diagnostic time from days to hours. A quality improvement study by Abigail Mathews, MHSc.">
+    <meta name="description" content="Rapid TB Testing Implementation at SickKids - Reducing diagnostic time from days to hours. A capstone project by Abigail Mathews, MHSc.">
     <meta name="keywords" content="tuberculosis, pediatric TB, diagnostic testing, SickKids, GeneXpert, rapid testing, quality improvement">
     <meta name="author" content="Abigail Mathews">
     <title>Rapid TB Testing at SickKids | Abigail Mathews MHSc</title>
@@ -17,10 +17,16 @@
     <section id="hero" class="hero-section">
         <div class="hero-overlay"></div>
         <div class="hero-content">
+            <!-- Fig1 and Fig2 - GeneXpert machines -->
+            <div class="hero-logos">
+                <img src="visuals/fig1.png" alt="GeneXpert Machine" class="hero-logo">
+                <img src="visuals/fig2.png" alt="GeneXpert Machine" class="hero-logo">
+            </div>
+            
             <h1 class="hero-title">Getting Kids Back to Being Kids, Faster</h1>
-            <p class="hero-subtitle">Reducing TB Diagnostic Time from Days to Hours at SickKids</p>
+            <p class="hero-subtitle-main">From Diagnosis to Deisolation: GeneXpert MTB/RIF Ultra Implementation for Airborne Deisolation of Suspected Pediatric Tuberculosis Patients at the Hospital for Sick Children</p>
             <div class="hero-author">
-                <p>A Quality Improvement Study by <strong>Abigail Mathews, MHSc</strong></p>
+                <p><strong>Abigail Mathews, MHSc</strong></p>
                 <p class="hero-institution">University of Toronto | The Hospital for Sick Children</p>
             </div>
             <div class="scroll-indicator">
@@ -34,47 +40,56 @@
         <div class="container">
             <h2 class="section-title">The Challenge: When Every Hour Counts</h2>
             
+            <!-- Fig3 -->
             <div class="challenge-intro">
-                <h3>The Situation</h3>
-                <p>When children are suspected of having tuberculosis (TB), they must be isolated in special negative-pressure rooms until test results confirm they're not contagious. At SickKids, this process was taking an average of <strong>5.2 days</strong>.</p>
+                <div class="visual-container">
+                    <img src="visuals/fig3.png" alt="Current State Diagram" class="section-visual">
+                </div>
+                <h3>The Current State</h3>
+                <p>When children are suspected of having pulmonary tuberculosis (TB) at SickKids, they must be isolated in airborne infection isolation negative-pressure rooms until diagnostic test results return (≥3 consecutive morning sputum samples for acid-fast bacillus (AFB) smear). At SickKids, this process was taking an average of 2-6 days.</p>
+                <p><strong>No formal policy on discontinuation of precautions, guided by AFB smear results.</strong></p>
             </div>
 
             <div class="impact-grid">
                 <div class="impact-card">
-                    <div class="icon">👨‍👩‍👧</div>
-                    <h4>Family Separation</h4>
-                    <p>Children isolated from families for extended periods</p>
-                </div>
-                <div class="impact-card">
                     <div class="icon">⏰</div>
-                    <h4>Delayed Care</h4>
-                    <p>Medical procedures and treatments postponed</p>
+                    <h4>Delayed Patient Care</h4>
+                    <p>Delayed clinical decision making and patient management</p>
                 </div>
                 <div class="impact-card">
-                    <div class="icon">💰</div>
+                    <div class="icon">👨‍👩‍👧</div>
+                    <h4>Patient Well-being</h4>
+                    <p>Child and family restricted to room and limited access to Child Life activities</p>
+                </div>
+                <div class="impact-card">
+                    <div class="icon">🏥</div>
                     <h4>High Costs</h4>
-                    <p>~$1,121 per day for specialized isolation rooms</p>
+                    <p>Higher costs associated with extended airborne precautions (PPE alone: $138/day)</p>
                 </div>
                 <div class="impact-card">
                     <div class="icon">🏥</div>
                     <h4>Limited Resources</h4>
-                    <p>Constrained availability of isolation facilities</p>
+                    <p>Constrained availability of isolation rooms and staffing burden</p>
                 </div>
             </div>
 
+            <!-- Fig4 -->
             <div class="challenge-details">
+                <div class="visual-container">
+                    <img src="visuals/fig4.png" alt="Testing Challenge Diagram" class="section-visual">
+                </div>
                 <h3>The Testing Challenge</h3>
-                <p>Traditional TB testing required:</p>
+                <p>Current TB testing pathway requires:</p>
                 <ul>
-                    <li>Specimens sent to off-site laboratory (Public Health Ontario)</li>
+                    <li>Specimens sent to off-site reference laboratory (Public Health Ontario) for acid-fast bacilli (AFB) smear microscopy and culture</li>
                     <li>Weekend and holiday delays in processing</li>
                     <li>Courier logistics complications</li>
-                    <li>Low sensitivity in children (only 6.8% detection rate with traditional smear microscopy)</li>
+                    <li>Low sensitivity (pediatric smear positivity ~14% in children 5-14 (Kunkel et al., 2016) in children with traditional smear microscopy)</li>
                 </ul>
             </div>
 
             <div class="timeline-visual">
-                <h4>Old Diagnostic Pathway</h4>
+                <h4>Smear Diagnostic Pathway</h4>
                 <div class="timeline-bar old-timeline">
                     <div class="timeline-segment">Day 1: Specimen Collection</div>
                     <div class="timeline-segment">Day 2-3: Transport & Processing</div>
@@ -118,12 +133,21 @@
                 </div>
             </div>
 
+            <!-- Fig5 -->
+            <div class="visual-container">
+                <img src="visuals/fig5.png" alt="GeneXpert Process Diagram" class="section-visual">
+            </div>
+
             <div class="innovation-highlights">
                 <h3>Key Innovation</h3>
                 <div class="highlight-grid">
                     <div class="highlight-item">
+                        <strong>🔬 Advanced Detection</strong>
+                        <p>GeneXpert detects TB DNA and rifampin resistance</p>
+                    </div>
+                    <div class="highlight-item">
                         <strong>♻️ Smart Resource Use</strong>
-                        <p>Repurposed existing COVID-19 testing equipment</p>
+                        <p>Repurposed existing COVID-19 testing GeneXpert instrument</p>
                     </div>
                     <div class="highlight-item">
                         <strong>🚀 Eliminates Delays</strong>
@@ -145,7 +169,7 @@
                 <p>This quality improvement study used:</p>
                 <ul>
                     <li>Workflow mapping and analysis of 900+ specimens</li>
-                    <li>Cost-benefit modeling with decision-analytic framework</li>
+                    <li>Cost-benefit modelling with decision-analytic framework</li>
                     <li>Laboratory validation across pediatric specimen types</li>
                     <li>Stakeholder collaboration across multiple departments</li>
                 </ul>
@@ -161,11 +185,43 @@
         </div>
     </section>
 
+    <!-- NATIONAL GUIDELINES SECTION -->
+    <section id="guidelines" class="content-section">
+        <div class="container">
+            <h2 class="section-title">National Guidelines & Evidence Base</h2>
+            
+            <div class="guidelines-intro">
+                <p>Importantly, the National TB Controllers Association and Association of Public Health Laboratories Consensus Statement (NTCA & APHL, 2016):</p>
+                <ul class="guidelines-list">
+                    <li><strong>Recommendation:</strong> 2 negative Xpert results (≥ 8 h apart) to guide deisolation</li>
+                </ul>
+            </div>
+
+            <!-- Fig7 and Fig8 -->
+            <div class="guidelines-visuals">
+                <div class="visual-container">
+                    <img src="visuals/fig7.png" alt="NTCA Guidelines Figure 1" class="section-visual">
+                </div>
+                <div class="visual-container">
+                    <img src="visuals/fig8.png" alt="NTCA Guidelines Figure 2" class="section-visual">
+                </div>
+                <p class="figure-caption">Figures from: NTCA and APHL Consensus Statement</p>
+            </div>
+        </div>
+    </section>
+
     <!-- THE IMPACT SECTION -->
-    <section id="impact" class="content-section">
+    <section id="impact" class="content-section alt-bg">
         <div class="container">
             <h2 class="section-title">Transforming Care: By The Numbers</h2>
             
+            <p class="impact-intro">Using retrospectively collected baseline diagnostic turnaround time data and costing from SickKids and Public Health Ontario, researchers and I conducted a cost-benefit analysis to estimate time saved, reduced isolation duration, and associated cost savings.</p>
+
+            <!-- Fig6 -->
+            <div class="visual-container">
+                <img src="visuals/fig6.png" alt="Impact Statistics" class="section-visual">
+            </div>
+
             <div class="stats-grid">
                 <div class="stat-card primary">
                     <div class="stat-number">5.2 → 0.5</div>
@@ -183,6 +239,8 @@
                     <p>Average Isolation Reduction</p>
                 </div>
             </div>
+
+            <h3 class="impact-section-title">When Results Are Negative:</h3>
 
             <div class="impact-categories">
                 <div class="impact-category">
@@ -254,7 +312,7 @@
     </section>
 
     <!-- THE PROCESS SECTION -->
-    <section id="process" class="content-section alt-bg">
+    <section id="process" class="content-section">
         <div class="container">
             <h2 class="section-title">How We Made It Happen</h2>
             
@@ -274,7 +332,7 @@
 
                     <div class="phase">
                         <div class="phase-number">2</div>
-                        <h4>Cost-Benefit Modeling</h4>
+                        <h4>Cost-Benefit Modelling</h4>
                         <ul>
                             <li>Developed decision-analytic model</li>
                             <li>Projected savings & outcomes</li>
@@ -331,7 +389,7 @@
                     </div>
                     <div class="factor">
                         <strong>📊 Evidence-Based</strong>
-                        <p>Rigorous data analysis and modeling</p>
+                        <p>Rigorous data analysis and modelling</p>
                     </div>
                 </div>
             </div>
@@ -339,32 +397,13 @@
     </section>
 
     <!-- BROADER IMPLICATIONS SECTION -->
-    <section id="implications" class="content-section">
+    <section id="implications" class="content-section alt-bg">
         <div class="container">
             <h2 class="section-title">Broader Implications</h2>
             
             <div class="scalability">
                 <h3>A Scalable Solution</h3>
-                <p>This implementation framework can guide other pediatric hospitals across Canada and beyond in adopting rapid TB diagnostics.</p>
-            </div>
-
-            <div class="global-context">
-                <h3>Global Context</h3>
-                <div class="context-stats">
-                    <div class="context-stat">
-                        <strong>10.8 Million</strong>
-                        <p>TB cases worldwide (2024)</p>
-                    </div>
-                    <div class="context-stat">
-                        <strong>1.2 Million</strong>
-                        <p>Children affected globally</p>
-                    </div>
-                    <div class="context-stat">
-                        <strong>Leading Cause</strong>
-                        <p>Infectious disease mortality</p>
-                    </div>
-                </div>
-                <p class="context-note">Rapid testing is increasingly critical as global health funding faces challenges.</p>
+                <p>This implementation framework can guide other pediatric hospitals across Canada in adopting rapid TB diagnostics.</p>
             </div>
 
             <div class="future-directions">
@@ -382,6 +421,18 @@
                 <h3>Why This Matters</h3>
                 <p>Investments in rapid diagnostics represent not just institutional efficiency gains, but contributions to broader public health preparedness and equity. As GeneXpert platforms become more widely available following their expanded use during the COVID-19 pandemic, Canadian institutions are well positioned to leverage existing infrastructure to modernize TB diagnostics.</p>
                 <p class="closing-statement"><strong>Ultimately, earlier diagnosis and treatment initiation through rapid testing has the potential to improve outcomes across both hospital and community settings—so we can get kids back to being kids faster.</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- REFERENCES SECTION -->
+    <section id="references" class="content-section">
+        <div class="container">
+            <h2 class="section-title">References</h2>
+            <div class="references-list">
+                <p class="reference">Kunkel, A., Abel Zur Wiesch, P., Nathavitharana, R. R., Marx, F. M., Jenkins, H. E., & Cohen, T. (2016). Smear positivity in paediatric and adult tuberculosis: systematic review and meta-analysis. <em>BMC Infectious Diseases, 16</em>, 282. <a href="https://doi.org/10.1186/s12879-016-1617-9" target="_blank">https://doi.org/10.1186/s12879-016-1617-9</a></p>
+                
+                <p class="reference">National Tuberculosis Controllers Association, & Association of Public Health Laboratories. (2016). <em>Consensus statement on the use of Cepheid Xpert MTB/RIF assay in making decisions to discontinue airborne infection isolation in healthcare settings.</em> <a href="https://www.tbcontrollers.org/docs/resources/NTCA_APHL_GeneXpert_Consensus_Statement_Final.pdf" target="_blank">https://www.tbcontrollers.org/docs/resources/NTCA_APHL_GeneXpert_Consensus_Statement_Final.pdf</a></p>
             </div>
         </div>
     </section>
@@ -422,6 +473,12 @@
                     <h3>Acknowledgments</h3>
                     <p>Special thanks to Chaoran Dong (Health Economist), Dr. Ian Kitai, Dr. Ray Lam, Nabilah Juma, and the entire multidisciplinary team at SickKids.</p>
                 </div>
+            </div>
+
+            <!-- Footer logos -->
+            <div class="footer-logos">
+                <img src="visuals/fig9.png" alt="University of Toronto Logo" class="footer-logo">
+                <img src="visuals/fig10.png" alt="SickKids Hospital Logo" class="footer-logo">
             </div>
 
             <div class="footer-bottom">
