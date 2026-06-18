@@ -1046,15 +1046,18 @@ li {
     .hero-content-with-image {
         flex-direction: column;
         text-align: center;
+        padding: 0;
+        gap: 0;
     }
 
     .hero-image-container {
         flex: 0 0 auto;
-        margin-bottom: var(--spacing-xs);
+        margin: 0;
     }
 
     .hero-machine-image {
-        max-width: 120px;
+        max-width: 150px;
+        margin-bottom: 0;
     }
 
     .challenge-list {
