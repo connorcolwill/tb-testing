@@ -1050,7 +1050,7 @@ li {
 
     .hero-image-container {
         flex: 0 0 auto;
-        margin-bottom: var(--spacing-md);
+        margin-bottom: var(--spacing-sm);
     }
 
     .hero-machine-image {
