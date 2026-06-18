@@ -111,11 +111,10 @@ li {
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
     background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-teal) 100%);
     color: var(--white);
     overflow: hidden;
-    padding: var(--spacing-lg) 0;
+    padding: var(--spacing-lg);
 }
 
 .hero-section::before {
@@ -139,27 +138,34 @@ li {
     background: rgba(27, 75, 127, 0.2);
 }
 
-.hero-content {
+.hero-content-with-image {
     position: relative;
     z-index: 1;
-    max-width: 1000px;
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xl);
     padding: var(--spacing-md);
 }
 
-/* Hero images above text - simple and small */
-.hero-images-top {
+.hero-image-container {
+    flex: 0 0 300px;
     display: flex;
+    align-items: center;
     justify-content: center;
-    gap: var(--spacing-md);
-    margin-bottom: var(--spacing-lg);
 }
 
-.hero-image-small {
-    max-width: 150px;
-    max-height: 150px;
-    width: auto;
+.hero-machine-image {
+    max-width: 100%;
     height: auto;
     object-fit: contain;
+    filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.3));
+}
+
+.hero-text {
+    flex: 1;
+    text-align: center;
 }
 
 .hero-title {
@@ -567,19 +573,17 @@ li {
     margin-top: var(--spacing-md);
 }
 
-/* Stack guidelines visuals vertically */
-.guidelines-visuals-stacked {
+/* Single guidelines visual - centered and medium sized */
+.guidelines-visual-single {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0;
+    justify-content: center;
     margin: var(--spacing-xl) 0;
     max-width: 100%;
 }
 
-.guidelines-fig-small {
-    max-width: 350px;
-    margin: 0 auto var(--spacing-xs);
+.guidelines-fig-medium {
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 .guideline-visual {
@@ -1039,9 +1043,18 @@ li {
         font-size: 1.1rem;
     }
     
-    .hero-image-small {
-        max-width: 120px;
-        max-height: 120px;
+    .hero-content-with-image {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-image-container {
+        flex: 0 0 auto;
+        margin-bottom: var(--spacing-md);
+    }
+
+    .hero-machine-image {
+        max-width: 200px;
     }
 
     .challenge-list {
@@ -1051,6 +1064,10 @@ li {
     .footer-logo:first-child {
         max-width: 180px;
         max-height: 180px;
+    }
+
+    .guidelines-fig-medium {
+        max-width: 100%;
     }
     
     .visual-container {
@@ -1125,9 +1142,8 @@ li {
         font-size: 0.9rem;
     }
     
-    .hero-image-small {
-        max-width: 100px;
-        max-height: 100px;
+    .hero-machine-image {
+        max-width: 150px;
     }
 
     .challenge-list {
